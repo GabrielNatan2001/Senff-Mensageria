@@ -2,9 +2,8 @@
 # Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
 ################################################################################
 
-/SenffMensageria/TesteLib/bin
-/SenffMensageria/TesteLib/obj
-/SenffMensageria/TesteLib/Program.cs
-/SenffMensageria/RabbitMqLibrary/obj
-/SenffMensageria/RabbitMqLibrary/bin
-/SenffMensageria/.vs/SenffMensageria
+/.vs
+/RabbitMqLibrary/bin
+/RabbitMqLibrary/obj
+/TesteLib/obj
+/TesteLib/bin
