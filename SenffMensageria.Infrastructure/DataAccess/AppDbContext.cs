@@ -11,10 +11,6 @@ namespace SenffMensageria.Infrastructure.DataAccess
         public DbSet<Matricula> Matriculas { get; set; }
         public DbSet<Aluno> Alunos { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            //optionsBuilder.UseSqlite("Data Source=Mensageria.db");
-        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(AlunoMap).Assembly);

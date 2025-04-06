@@ -18,9 +18,14 @@ namespace SenffMensageria.Infrastructure.DataAccess.Mappings
                .ValueGeneratedOnAdd();
 
             builder.Property(a => a.Turma)
-                .HasColumnName("Nome")
+                .HasColumnName("Turma")
                 .HasMaxLength(500)
                 .IsRequired();
+
+            builder.Property(a => a.Status)
+                .HasColumnName("Status")
+                .IsRequired()
+                .HasConversion<int>();
 
             builder.HasOne(m => m.Aluno)
                 .WithOne(a => a.Matricula)

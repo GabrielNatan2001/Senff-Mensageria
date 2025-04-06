@@ -12,6 +12,12 @@ namespace SenffMensageria.Domain.Entities
         public int AlunoId { get; private set; }
         public Aluno Aluno { get; set; }
 
+        public Matricula(int alunoId, string turma)
+        {
+            AlunoId = alunoId;
+            Turma = turma;
+            Status = EStatusMatricula.PREMATRICULA;
+        }
         public Matricula(int alunoId, string turma, EStatusMatricula status)
         {
             AlunoId = alunoId;
