@@ -1,4 +1,6 @@
-﻿namespace SenffMensageria.Domain.Entities
+﻿using SenffMensageria.Domain.Exceptions;
+
+namespace SenffMensageria.Domain.Entities
 {
     public class Aluno : BaseEntity
     {
@@ -28,8 +30,8 @@
 
         public void Validate()
         {
-            if (string.IsNullOrEmpty(Nome)) throw new Exception("Nome não pode ser nulo ou vazio.");
-            if (string.IsNullOrEmpty(Email)) throw new Exception("Email não pode ser nulo ou vazio.");
+            if (string.IsNullOrEmpty(Nome)) throw new ErroAoValidarException("Nome não pode ser nulo ou vazio.");
+            if (string.IsNullOrEmpty(Email)) throw new ErroAoValidarException("Email não pode ser nulo ou vazio.");
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SenffMensageria.Domain.Entities;
+using SenffMensageria.Domain.Exceptions;
 using SenffMensageria.Domain.Repositories;
 
 namespace SenffMensageria.Infrastructure.DataAccess.Repositories
@@ -22,7 +23,7 @@ namespace SenffMensageria.Infrastructure.DataAccess.Repositories
         {
             var entity = await GetById(id);
             if(entity == null) {
-                throw new Exception($"Aluno com id {id} não encontrado ao remover.");
+                throw new ObjetoNaoEncontradoException($"Aluno com id {id} não encontrado ao remover.");
             }
             _context.Alunos.Remove(entity);
         }

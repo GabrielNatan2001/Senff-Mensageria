@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using SenffMensageria.API.Filters;
 using SenffMensageria.Application;
 using SenffMensageria.Infrastructure;
 using SenffMensageria.Infrastructure.DataAccess;
@@ -11,6 +12,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddMvc(options => options.Filters.Add(typeof(ExceptionsFilter)));
 
 builder.Services.AddInfrastructure();
 builder.Services.AddApplication(builder.Configuration);

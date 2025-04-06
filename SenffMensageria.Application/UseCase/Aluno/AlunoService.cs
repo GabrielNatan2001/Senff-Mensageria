@@ -1,4 +1,5 @@
-﻿using SenffMensageria.Domain.Repositories;
+﻿using SenffMensageria.Domain.Exceptions;
+using SenffMensageria.Domain.Repositories;
 using Shared.DTO;
 
 namespace SenffMensageria.Application.UseCase.Aluno
@@ -24,7 +25,7 @@ namespace SenffMensageria.Application.UseCase.Aluno
         {
             var entity = await _repository.GetById(id);
 
-            if (entity == null) throw new Exception("Aluno não encontrado");
+            if (entity == null) throw new ObjetoNaoEncontradoException("Aluno não encontrado");
 
             entity.AtualizarNome(request.Nome);
             entity.AtualizarEmail(request.Email);
@@ -36,7 +37,7 @@ namespace SenffMensageria.Application.UseCase.Aluno
         {
             var resultEntity  = await _repository.GetAll();
 
-            if (resultEntity == null) throw new Exception("Nenhum aluno encontrado no sistema");
+            if (resultEntity == null) throw new ObjetoNaoEncontradoException("Nenhum aluno encontrado no sistema");
 
             var resultDto = resultEntity.Select(x => new AlunoDto()
             {

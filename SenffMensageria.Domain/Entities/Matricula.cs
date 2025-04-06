@@ -1,5 +1,6 @@
 ﻿using System.Xml.Linq;
 using SenffMensageria.Domain.Enum;
+using SenffMensageria.Domain.Exceptions;
 
 namespace SenffMensageria.Domain.Entities
 {
@@ -20,7 +21,7 @@ namespace SenffMensageria.Domain.Entities
 
         public void EfetivarMatricula()
         {
-            if (Status != EStatusMatricula.PREMATRICULA) throw new Exception("Só efetivar matricula com status pre-matriculado");
+            if (Status != EStatusMatricula.PREMATRICULA) throw new ErroAoValidarException("Só efetivar matricula com status pre-matriculado");
 
             Status = EStatusMatricula.MATRICULADO;
         }
@@ -31,7 +32,7 @@ namespace SenffMensageria.Domain.Entities
 
         public void Validate()
         {
-            if (string.IsNullOrEmpty(Turma)) throw new Exception("Nome não pode ser nulo ou vazio.");
+            if (string.IsNullOrEmpty(Turma)) throw new ErroAoValidarException("Nome não pode ser nulo ou vazio.");
         }
     }
 }
