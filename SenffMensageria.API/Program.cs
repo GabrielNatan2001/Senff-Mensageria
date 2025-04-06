@@ -1,5 +1,7 @@
+using Microsoft.EntityFrameworkCore;
 using SenffMensageria.Application;
 using SenffMensageria.Infrastructure;
+using SenffMensageria.Infrastructure.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,12 +17,15 @@ builder.Services.AddApplication(builder.Configuration);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+using (var scope = app.Services.CreateScope())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    context.Database.Migrate();
 }
+
+// Configure the HTTP request pipeline.
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
