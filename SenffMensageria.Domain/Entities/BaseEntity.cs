@@ -9,6 +9,5 @@ namespace SenffMensageria.Domain.Entities
     public abstract class BaseEntity
     {
         public int Id { get; private set; }
-        public List<string> Events { get; private set; }
     }
 }

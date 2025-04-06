@@ -1,4 +1,5 @@
-﻿using RabbitMqLibrary.Publisher;
+﻿using RabbitMqLibrary.Enum;
+using RabbitMqLibrary.Publisher;
 using SenffMensageria.Domain.Repositories;
 using Shared.DTO;
 
@@ -13,6 +14,10 @@ namespace SenffMensageria.Application.UseCase.Matricula
         {
             _repository = repository;
             _publisher = publisher;
+
+            _publisher.CreateExchange("MatriculaEx", EExchangeType.DIRECT);
+            _publisher.CreateQueue("Matricula");
+            _publisher.BindQueueToExchange("MatriculaEx", "Matricula", "");
         }
         public async Task Adicionar(MatriculaDto request)
         {
@@ -20,6 +25,9 @@ namespace SenffMensageria.Application.UseCase.Matricula
 
             await _repository.Add(entity);
             await _repository.Commit();
+            request.Id = entity.Id;
+
+            await _publisher.PublishAsync(request, "Matricula");
         }
 
         public async Task<MatriculaDto> GetById(int id)

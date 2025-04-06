@@ -13,7 +13,7 @@ namespace SenffMensageria.Infrastructure.DataAccess
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=Mensageria.db");
+            //optionsBuilder.UseSqlite("Data Source=Mensageria.db");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

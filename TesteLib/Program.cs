@@ -1,33 +1,15 @@
-﻿// See https://aka.ms/new-console-template for more information
-
+﻿using Microsoft.Extensions.DependencyInjection;
 using RabbitMqLibrary.Consumer;
-using RabbitMqLibrary.Enum;
-using RabbitMqLibrary.Publisher;
-
-//var exchangeName = "testeLib";
-//var queueName = "fila-lib";
-
-//var publish = new RabbitMqPublisher("localhost", "guest", "guest");
-
-//publish.CreateExchange(exchangeName, EExchangeType.DIRECT);
-//publish.CreateQueue(queueName);
-//publish.BindQueueToExchange(exchangeName, queueName, "123");
-//publish.BindQueueToExchange(exchangeName, queueName, "321");
+using RabbitMqLibrary.Extensions;
 
 
-//for (var i = 0; i < 10; i++)
-//{
-//    await publish.PublishAsync("teste " + i + 1.ToString() + " data hora: " + DateTime.Now.ToString(), "123", exchangeName);
-//}
-//for (var i = 0; i < 10; i++)
-//{
-//    await publish.PublishAsync("teste " + i + 1.ToString() + " data hora: " + DateTime.Now.ToString(), "321", exchangeName);
-//}
+var serviceCollection = new ServiceCollection();
+serviceCollection.AddRabbitMQ("localhost", "guest", "guest");
 
-var queueName = "fila-lib";
-var consumer = new RabbitMqConsumer("localhost", "guest", "guest");
+var serviceProvider = serviceCollection.BuildServiceProvider();
+var consumer = serviceProvider.GetRequiredService<IRabbitMqConsumer>();
 
-consumer.QueueListener(queueName, message =>
+consumer.QueueListener("Matricula", async message =>
 {
     Console.WriteLine($"Mensagem recebida: {message}");
 });

@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenffMensageria.Application
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenffMensageria.Infrastructure", "SenffMensageria.Infrastructure\SenffMensageria.Infrastructure.csproj", "{DC7BA582-BAC9-488D-A41B-A52B84D0525B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{DAEAB48A-76EF-47D4-A058-EBB5F7220784}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenffMensageria.Shared", "Shared\SenffMensageria.Shared.csproj", "{DAEAB48A-76EF-47D4-A058-EBB5F7220784}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

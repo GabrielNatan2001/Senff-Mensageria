@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RabbitMqLibrarySenff" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.3" />
+    <PackageReference Include="RabbitMqLibrarySenff" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SenffMensageria.Application\SenffMensageria.Application.csproj" />
+    <ProjectReference Include="..\SenffMensageria.Domain\SenffMensageria.Domain.csproj" />
+    <ProjectReference Include="..\SenffMensageria.Infrastructure\SenffMensageria.Infrastructure.csproj" />
   </ItemGroup>
 </Project>

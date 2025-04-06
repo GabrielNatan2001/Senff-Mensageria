@@ -18,3 +18,8 @@
 /SenffMensageria.Infrastructure/obj
 /Shared/bin/Debug/net8.0
 /Shared/obj
+/SenffMensageria.API/bin/Release/net8.0
+/SenffMensageria.Application/bin/Release/net8.0
+/SenffMensageria.Domain/bin/Release/net8.0
+/SenffMensageria.Infrastructure/bin/Release/net8.0
+/Shared/bin/Release/net8.0

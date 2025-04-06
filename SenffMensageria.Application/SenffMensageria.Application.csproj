@@ -7,13 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RabbitMqLibrarySenff" Version="1.1.0" />
+    <PackageReference Include="RabbitMqLibrarySenff" Version="1.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SenffMensageria.Domain\SenffMensageria.Domain.csproj" />
     <ProjectReference Include="..\SenffMensageria.Infrastructure\SenffMensageria.Infrastructure.csproj" />
-    <ProjectReference Include="..\Shared\Shared.csproj" />
+    <ProjectReference Include="..\Shared\SenffMensageria.Shared.csproj" />
   </ItemGroup>
 
 </Project>

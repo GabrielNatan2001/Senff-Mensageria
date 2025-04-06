@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Novo Perfil",
+    "Projects": [
+      {
+        "Path": "TesteLib\\SenffMensageria.Consumer.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "SenffMensageria.API\\SenffMensageria.API.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

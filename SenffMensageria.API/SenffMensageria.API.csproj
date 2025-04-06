@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -21,7 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SenffMensageria.Application\SenffMensageria.Application.csproj" />
     <ProjectReference Include="..\SenffMensageria.Infrastructure\SenffMensageria.Infrastructure.csproj" />
-    <ProjectReference Include="..\Shared\Shared.csproj" />
+    <ProjectReference Include="..\Shared\SenffMensageria.Shared.csproj" />
   </ItemGroup>
 
 </Project>

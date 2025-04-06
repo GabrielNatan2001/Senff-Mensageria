@@ -24,7 +24,7 @@ namespace SenffMensageria.Infrastructure.DataAccess.Repositories
 
         public async Task<Matricula?> GetById(int id)
         {
-            return await _context.Matriculas.FirstOrDefaultAsync(p => p.Id == id);
+            return await _context.Matriculas.Include(x=> x.Aluno).FirstOrDefaultAsync(p => p.Id == id);
         }
     }
 }

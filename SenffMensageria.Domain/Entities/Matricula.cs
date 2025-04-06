@@ -9,7 +9,7 @@ namespace SenffMensageria.Domain.Entities
         public EStatusMatricula Status { get; private set; }
 
         public int AlunoId { get; private set; }
-        public Aluno Aluno { get; private set; }
+        public Aluno Aluno { get; set; }
 
         public Matricula(int alunoId, string turma, EStatusMatricula status)
         {
