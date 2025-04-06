@@ -10,6 +10,28 @@ services:
     environment:
       - RABBITMQ_DEFAULT_USER=guest
       - RABBITMQ_DEFAULT_PASS=guest
+    healthcheck:
+      test: ["CMD", "rabbitmqctl", "status"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=MensageriaSenff
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data  # Persistência de dados
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d MensageriaSenff"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
   myapp:
     build:
@@ -20,7 +42,12 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
+      - ConnectionStrings__PostgreSQL=Host=postgres;Port=5432;Database=MensageriaSenff;Username=admin;Password=123
     depends_on:
-      - rabbitmq
-    links:
-      - rabbitmq
+      rabbitmq:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pgdata:  # Volume para persistir dados do PostgreSQL
