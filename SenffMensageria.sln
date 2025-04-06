@@ -1,11 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35913.81 d17.13
+VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqLibrary", "RabbitMqLibrary\RabbitMqLibrary.csproj", "{C7868EE5-81DC-413B-AE40-5D2AE09DAD3E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenffMensageria.Consumer", "TesteLib\SenffMensageria.Consumer.csproj", "{6D69722A-7E18-49B9-8FD3-B315673A2018}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenffMensageria.API", "SenffMensageria.API\SenffMensageria.API.csproj", "{513F4569-F93A-4411-A7A2-A009B04B5629}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenffMensageria.Domain", "SenffMensageria.Domain\SenffMensageria.Domain.csproj", "{EF2F8C6C-3D96-4105-BA4B-AEC4110916DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenffMensageria.Application", "SenffMensageria.Application\SenffMensageria.Application.csproj", "{CACA74EA-647E-47A6-A9C2-2D7F47339192}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenffMensageria.Infrastructure", "SenffMensageria.Infrastructure\SenffMensageria.Infrastructure.csproj", "{DC7BA582-BAC9-488D-A41B-A52B84D0525B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{DAEAB48A-76EF-47D4-A058-EBB5F7220784}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +31,26 @@ Global
 		{6D69722A-7E18-49B9-8FD3-B315673A2018}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D69722A-7E18-49B9-8FD3-B315673A2018}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D69722A-7E18-49B9-8FD3-B315673A2018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{513F4569-F93A-4411-A7A2-A009B04B5629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{513F4569-F93A-4411-A7A2-A009B04B5629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{513F4569-F93A-4411-A7A2-A009B04B5629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{513F4569-F93A-4411-A7A2-A009B04B5629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF2F8C6C-3D96-4105-BA4B-AEC4110916DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF2F8C6C-3D96-4105-BA4B-AEC4110916DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF2F8C6C-3D96-4105-BA4B-AEC4110916DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF2F8C6C-3D96-4105-BA4B-AEC4110916DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CACA74EA-647E-47A6-A9C2-2D7F47339192}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CACA74EA-647E-47A6-A9C2-2D7F47339192}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CACA74EA-647E-47A6-A9C2-2D7F47339192}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CACA74EA-647E-47A6-A9C2-2D7F47339192}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC7BA582-BAC9-488D-A41B-A52B84D0525B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC7BA582-BAC9-488D-A41B-A52B84D0525B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC7BA582-BAC9-488D-A41B-A52B84D0525B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC7BA582-BAC9-488D-A41B-A52B84D0525B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAEAB48A-76EF-47D4-A058-EBB5F7220784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAEAB48A-76EF-47D4-A058-EBB5F7220784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAEAB48A-76EF-47D4-A058-EBB5F7220784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAEAB48A-76EF-47D4-A058-EBB5F7220784}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

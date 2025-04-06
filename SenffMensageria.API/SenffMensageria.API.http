@@ -1,0 +1,6 @@
+@SenffMensageria.API_HostAddress = http://localhost:5224
+
+GET {{SenffMensageria.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
