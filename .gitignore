@@ -7,3 +7,14 @@
 /RabbitMqLibrary/obj
 /TesteLib/obj
 /TesteLib/bin
+/obj
+/SenffMensageria.API/bin/Debug/net8.0
+/SenffMensageria.API/obj
+/SenffMensageria.Application/bin/Debug/net8.0
+/SenffMensageria.Application/obj
+/SenffMensageria.Domain/bin/Debug/net8.0
+/SenffMensageria.Domain/obj
+/SenffMensageria.Infrastructure/bin/Debug/net8.0
+/SenffMensageria.Infrastructure/obj
+/Shared/bin/Debug/net8.0
+/Shared/obj

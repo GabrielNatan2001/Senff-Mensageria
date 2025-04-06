@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <PackageId>RabbitMqLibrarySenff</PackageId>
     <Title>RabbitMqLibrarySenff</Title>
-    <Version>1.1</Version>
+    <Version>1.2</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 

@@ -6,10 +6,10 @@ namespace RabbitMqLibrary.Extensions
 {
     public static class DependcyInjectionRabbitMq
     {
-        public static IServiceCollection AddRabbitMQ(this IServiceCollection services)
+        public static IServiceCollection AddRabbitMQ(this IServiceCollection services, string hostname, string user, string password, int port = 5672)
         {
-            services.AddScoped<IRabbitMqPublisher, RabbitMqPublisher>();
-            services.AddScoped<IRabbitMqConsumer, RabbitMqConsumer>();
+            services.AddScoped<IRabbitMqPublisher>(x => new RabbitMqPublisher(hostname, user, password, port));
+            services.AddScoped<IRabbitMqConsumer>(x => new RabbitMqConsumer(hostname, user, password, port));
 
             return services;
         }
