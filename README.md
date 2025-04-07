@@ -22,7 +22,7 @@ Adicione a referência do projeto RabbitMqLibrarySenff
 
 ## Exemplo de Uso:
 
-## Publisher
+### Publisher
 var publisher = new IRabbitMqPublisher();
 
 // Criando um exchange e uma fila
@@ -35,7 +35,7 @@ publisher.BindQueueToExchange("meu-exchange", "minha-fila", "rota.teste");
 // Publicando uma mensagem
 await publisher.PublishAsync(new { Nome = "João", Idade = 30 }, "rota.teste", "meu-exchange");
 
-## Consumer
+### Consumer
 var consumer = new IRabbitMqConsumer();
 consumer.QueueListener("Matricula", async message =>
 {
