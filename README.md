@@ -22,6 +22,16 @@ Adicione a referência do projeto RabbitMqLibrarySenff
 
 ## Exemplo de Uso:
 
+###Configuração 
+```csharp
+--Adicionar no startup do projeto
+var hostname = "localhost";
+var user = "guest";
+var password = "guest";
+var port = 5672;
+
+services.AddRabbitMQ(hostname, user, password, port);
+```
 ### Publisher
 ```csharp
 var publisher = new IRabbitMqPublisher();
