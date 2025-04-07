@@ -17,12 +17,16 @@ namespace SenffMensageria.Domain.Entities
             AlunoId = alunoId;
             Turma = turma;
             Status = EStatusMatricula.PREMATRICULA;
+
+            Validate();
         }
         public Matricula(int alunoId, string turma, EStatusMatricula status)
         {
             AlunoId = alunoId;
             Turma = turma;
-            Status = EStatusMatricula.PREMATRICULA;
+            Status = status;
+
+            Validate();
         }
 
         public void EfetivarMatricula()
