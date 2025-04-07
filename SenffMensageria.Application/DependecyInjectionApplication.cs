@@ -1,8 +1,10 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using FluentValidation;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RabbitMqLibrary.Extensions;
 using SenffMensageria.Application.UseCase.Aluno;
 using SenffMensageria.Application.UseCase.Matricula;
+using Shared.DTO;
 
 namespace SenffMensageria.Application
 {
@@ -11,7 +13,8 @@ namespace SenffMensageria.Application
         public static void AddApplication(this IServiceCollection services, IConfiguration configuration)
         {
             AddServices(services);
-            if(configuration != null)
+            AddValidation(services);
+            if (configuration != null)
             {
                 AddRabbitMqLib(services, configuration);
             }
@@ -31,6 +34,12 @@ namespace SenffMensageria.Application
             var port = int.Parse(configuration["RabbitMqConfig:Port"] ?? "5672");
 
             services.AddRabbitMQ(hostname, user, password, port);
+        }
+
+        public static void AddValidation(this IServiceCollection services)
+        {
+            services.AddScoped<IValidator<AlunoDto>, AlunoValidator>();
+            services.AddScoped<IValidator<MatriculaDto>, MatriculaValidator>();
         }
     }
 }

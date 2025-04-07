@@ -138,7 +138,9 @@ namespace SenffMensageria.Tests.Aluno.UseCase
 
         private AlunoService CreateService()
         {
-            return new AlunoService(_repository.Object);
+            var validator = new AlunoValidator();
+
+            return new AlunoService(_repository.Object, validator);
         }
     }
 }

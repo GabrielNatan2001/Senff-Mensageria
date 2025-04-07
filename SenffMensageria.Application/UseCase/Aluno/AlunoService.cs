@@ -1,4 +1,6 @@
-﻿using SenffMensageria.Domain.Exceptions;
+﻿using System.Linq;
+using FluentValidation;
+using SenffMensageria.Domain.Exceptions;
 using SenffMensageria.Domain.Repositories;
 using Shared.DTO;
 
@@ -7,14 +9,20 @@ namespace SenffMensageria.Application.UseCase.Aluno
     public class AlunoService : IAlunoService
     {
         private readonly IAlunoRepository _repository;
+        private readonly IValidator<AlunoDto> _validator;
 
-        public AlunoService(IAlunoRepository repository)
+        public AlunoService(IAlunoRepository repository, IValidator<AlunoDto> validator)
         {
             _repository = repository;
+            _validator = validator;
         }
 
         public async Task<AlunoDto> Adicionar(AlunoDto request)
         {
+            var validationResult = await _validator.ValidateAsync(request);
+            if (!validationResult.IsValid)
+                throw new ErroAoValidarException(string.Join("\n" ,validationResult.Errors));
+
             var entity = new Domain.Entities.Aluno(request.Nome, request.Email);
 
             await _repository.Add(entity);
@@ -30,6 +38,10 @@ namespace SenffMensageria.Application.UseCase.Aluno
 
         public async Task<AlunoDto> Atualizar(int id, AlunoDto request)
         {
+            var validationResult = await _validator.ValidateAsync(request);
+            if (!validationResult.IsValid)
+                throw new ErroAoValidarException(string.Join("\n", validationResult.Errors));
+
             var entity = await _repository.GetById(id);
 
             if (entity == null) throw new ObjetoNaoEncontradoException("Aluno não encontrado");
