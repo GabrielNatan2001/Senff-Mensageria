@@ -17,9 +17,11 @@ namespace SenffMensageria.Infrastructure.DataAccess.Repositories
         {
             _context = context;
         }
-        public async Task Add(Matricula entity)
+        public async Task<Matricula> Add(Matricula entity)
         {
             await _context.Matriculas.AddAsync(entity);
+
+            return entity;
         }
 
         public async Task<Matricula?> GetById(int id)

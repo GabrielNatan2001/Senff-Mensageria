@@ -9,7 +9,7 @@ namespace SenffMensageria.Domain.Repositories
 {
     public interface IMatriculaRepository : IBaseRepository
     {
-        Task Add(Matricula entity);
+        Task<Matricula> Add(Matricula entity);
         Task<Matricula?> GetById(int id);
     }
 }

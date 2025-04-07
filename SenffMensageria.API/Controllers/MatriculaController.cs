@@ -19,8 +19,8 @@ namespace SenffMensageria.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Matricular(MatriculaDto request)
         {
-            await _service.Adicionar(request);
-            return Created();
+            var result = await _service.Adicionar(request);
+            return Created("", result);
         }
 
         [HttpGet("{id}")]

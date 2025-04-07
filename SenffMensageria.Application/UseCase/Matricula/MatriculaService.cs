@@ -19,7 +19,7 @@ namespace SenffMensageria.Application.UseCase.Matricula
             _publisher.CreateQueue("Matricula");
             _publisher.BindQueueToExchange("MatriculaEx", "Matricula", "");
         }
-        public async Task Adicionar(MatriculaDto request)
+        public async Task<MatriculaDto> Adicionar(MatriculaDto request)
         {
             var entity = new Domain.Entities.Matricula(request.AlunoId, request.Turma, request.Status);
 
@@ -28,6 +28,14 @@ namespace SenffMensageria.Application.UseCase.Matricula
             request.Id = entity.Id;
 
             await _publisher.PublishAsync(request, "Matricula");
+
+            return new MatriculaDto
+            {
+                Id = entity.Id,
+                Turma = entity.Turma,
+                Status = entity.Status,
+                AlunoId = entity.AlunoId
+            };
         }
 
         public async Task<MatriculaDto> GetById(int id)

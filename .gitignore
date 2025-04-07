@@ -23,3 +23,5 @@
 /SenffMensageria.Domain/bin/Release/net8.0
 /SenffMensageria.Infrastructure/bin/Release/net8.0
 /Shared/bin/Release/net8.0
+/SenffMensageria.Tests/bin/Debug/net8.0
+/SenffMensageria.Tests/obj

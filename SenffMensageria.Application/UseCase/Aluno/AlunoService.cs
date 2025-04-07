@@ -13,15 +13,22 @@ namespace SenffMensageria.Application.UseCase.Aluno
             _repository = repository;
         }
 
-        public async Task Adicionar(AlunoDto request)
+        public async Task<AlunoDto> Adicionar(AlunoDto request)
         {
             var entity = new Domain.Entities.Aluno(request.Nome, request.Email);
 
             await _repository.Add(entity);
             await _repository.Commit();
+
+            return new AlunoDto()
+            {
+                Id = entity.Id,
+                Nome = entity.Nome,
+                Email = entity.Email
+            };
         }
 
-        public async Task Atualizar(int id, AlunoDto request)
+        public async Task<AlunoDto> Atualizar(int id, AlunoDto request)
         {
             var entity = await _repository.GetById(id);
 
@@ -31,6 +38,13 @@ namespace SenffMensageria.Application.UseCase.Aluno
             entity.AtualizarEmail(request.Email);
 
             await _repository.Commit();
+
+            return new AlunoDto()
+            {
+                Id = entity.Id,
+                Nome = entity.Nome,
+                Email = entity.Email
+            };
         }
 
         public async Task<List<AlunoDto>> GetAll()

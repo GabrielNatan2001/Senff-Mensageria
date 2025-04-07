@@ -19,17 +19,17 @@ namespace SenffMensageria.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Adicionar(AlunoDto request)
         {
-            await _service.Adicionar(request);
+            var result = await _service.Adicionar(request);
 
-            return Created();
+            return Created("", result);
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Atualizar(int id, AlunoDto request)
         {
-            await _service.Atualizar(id, request);
+            var result = await _service.Atualizar(id, request);
 
-            return Ok();
+            return Ok(result);
         }
 
         [HttpGet]

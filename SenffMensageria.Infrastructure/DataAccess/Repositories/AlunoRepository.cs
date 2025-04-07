@@ -14,9 +14,10 @@ namespace SenffMensageria.Infrastructure.DataAccess.Repositories
             _context = context;
         }
 
-        public async Task Add(Aluno entity)
+        public async Task<Aluno> Add(Aluno entity)
         {
             await _context.Alunos.AddAsync(entity);
+            return entity;
         }
 
         public async Task Remove(int id)
