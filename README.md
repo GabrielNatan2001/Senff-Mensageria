@@ -39,7 +39,7 @@ await publisher.PublishAsync(new { Nome = "João", Idade = 30 }, "rota.teste", "
 ### Consumer
 ```csharp
 var consumer = new IRabbitMqConsumer();
-consumer.QueueListener("Matricula", async message =>
+consumer.QueueListener("minha-fila", async message =>
 {
    Console.WriteLine($"Mensagem recebida: {message}");
 });
