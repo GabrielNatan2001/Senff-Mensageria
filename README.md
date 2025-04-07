@@ -6,3 +6,38 @@ A biblioteca RabbitMqLibrarySenff(disponível em https://www.nuget.org/packages/
 
 # Rodar com Docker
 Para rodar o projeto com o docker é necessário entrar na pasta raiz do projeto onde contém o dockerfile e o docker-compose, digitar o comando "docker-compose build" e em seguinda o comando "docker-compose up" feito isso, a API estará na porta 5000(http://localhost:5000/swagger/index.html) e o rabbit mq na porta 5672.
+
+
+# RabbitMqLibrary
+
+## Recursos
+- Publicação assíncrona de mensagens com suporte a tipagem genérica.
+- Criação de exchanges com tipos personalizáveis.
+- Criação de filas com opções de durabilidade, exclusividade e auto exclusão.
+- Associação (binding) entre filas e exchanges com routing keys.
+- Consumo de mensagens de uma fila
+
+## Instalação
+Adicione a referência do projeto RabbitMqLibrarySenff
+
+## Exemplo de Uso:
+
+## Publisher
+var publisher = new IRabbitMqPublisher();
+
+// Criando um exchange e uma fila
+publisher.CreateExchange("meu-exchange", EExchangeType.Direct);
+publisher.CreateQueue("minha-fila");
+
+// Vinculando fila ao exchange
+publisher.BindQueueToExchange("meu-exchange", "minha-fila", "rota.teste");
+
+// Publicando uma mensagem
+await publisher.PublishAsync(new { Nome = "João", Idade = 30 }, "rota.teste", "meu-exchange");
+
+## Consumer
+var consumer = new IRabbitMqConsumer();
+consumer.QueueListener("Matricula", async message =>
+{
+   Console.WriteLine($"Mensagem recebida: {message}");
+});
