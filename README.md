@@ -72,6 +72,7 @@ services.AddRabbitMQ(hostname, user, password, port);
 ```
 
 ## Exemplo de Uso:
+#### Publisher
 ```csharp
 var publisher = new IRabbitMqPublisher();
 
@@ -85,7 +86,7 @@ publisher.BindQueueToExchange("meu-exchange", "minha-fila", "rota.teste");
 // Publicando uma mensagem
 await publisher.PublishAsync(new { Nome = "João", Idade = 30 }, "rota.teste", "meu-exchange");
 ```
-### Consumer
+#### Consumer
 ```csharp
 var consumer = new IRabbitMqConsumer();
 consumer.QueueListener("minha-fila", async message =>
