@@ -34,10 +34,10 @@ consumer.QueueListener("Matricula", async message =>
             entity.EfetivarMatricula();
             repository.Commit();
 
-             Console.WriteLine($"Matricula efetivada com sucesso!");
+            Console.WriteLine($"Matricula efetivada com sucesso!");
         }
     }
-    catch(Exception e)
+    catch (Exception e)
     {
         Console.WriteLine($"Erro ao processar mensagem: {e.Message}");
     }

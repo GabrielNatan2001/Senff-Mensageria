@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.11.0" />
-    <PackageReference Include="RabbitMqLibrarySenff" Version="1.2.0" />
+    <PackageReference Include="RabbitMqLibraryGabrielNatan" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>

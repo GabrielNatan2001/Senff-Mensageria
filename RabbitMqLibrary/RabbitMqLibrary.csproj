@@ -4,9 +4,9 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PackageId>RabbitMqLibrarySenff</PackageId>
+    <PackageId>RabbitMqLibraryGabrielNatan</PackageId>
     <Title>RabbitMqLibrarySenff</Title>
-    <Version>1.3</Version>
+    <Version>1.0</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
